@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: black;
+	padding-top: 150px;
+}
+
+.lightsaber {
+	position: relative;
+	color: white;
+	margin-right: 30px;
+}
+
+.lightsaber input[type="checkbox"] {
+	opacity: 0;
+}
+
+.lightsaber label {
+	cursor: pointer;
+	display: block;
+	height: 50px; 
+	width: 15px;
+	background: #DDD;
+	border-bottom: solid 4px gray;
+	border-top: solid 4px gray;
+	border-radius: 5px;
+}
+
+.lightsaber .plasma {
+	border-radius: 12px 12px 0 0;
+	background: #FFF;
+	height: 0;
+	width: 10px;
+	bottom: 64px;
+	left: 2.42px;
+	position: absolute;
+	filter: blur(1px);
+	transition: 0.3s height;
+}
+
+.lightsaber input[type="checkbox"]:checked ~ .plasma {
+	height: 250px;
+}
+
+.lightsaber--yoda .plasma {
+	background: green;
+}
+
+.lightsaber--vader .plasma {
+	background: red;
+}
+
+.lightsaber--windu .plasma {
+	background: blue;
+}

@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<div class="lightsaber lightsaber--yoda">
+	<label for="yoda"></label>
+	<input type="checkbox" id="yoda" unchecked>
+	<div class="plasma"></div>
+</div>
+<div class="lightsaber lightsaber--vader">
+	<label for="vader"></label>
+	<input type="checkbox" id="vader" unchecked>
+	<div class="plasma"></div>
+</div>
+<div class="lightsaber lightsaber--windu">
+	<label for="windu"></label>
+	<input type="checkbox" id="windu" unchecked>
+	<div class="plasma"></div>
+</div>
+
+<script type="text/javascript">
+	const lightsabers = document.querySelectorAll('.lightsaber input[type="checkbox"]');
+	lightsabers.forEach(saber => saber.addEventListener('change', playWhoosh));
+
+	function playWhoosh(e) {
+		const newAudio = document.createElement('audio');
+		newAudio.src = 'https://scotch.io/audio/lightsaber.wav';
+		newAudio.play();
+	}
+
+</script>
